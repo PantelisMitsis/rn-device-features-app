@@ -7,3 +7,15 @@ export function getMapPreview({lat, lng}){
 }
 
 
+export async function getAddress(lat, lng) {
+  const url = `take the url from the geocode google api and add your API key`;
+  const response = await fetch(url);
+
+  if (!response.ok){
+    throw new Error ('Falied to fetch address!');
+  }
+
+  const data = await response.json();
+  const address = data.results[0]. formatted_address;
+  return address;
+}
