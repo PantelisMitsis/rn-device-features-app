@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.primary100,
     borderRadius: 4,
-    overflow: 'hidden' //the same if put in styles.image borderRadius: 4
+    overflow: 'hidden' //it has the same result as if put in styles.image borderRadius: 4
   },
   image:{
     width: '100%',

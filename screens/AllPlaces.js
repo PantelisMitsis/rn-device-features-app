@@ -16,7 +16,7 @@ function AllPlaces() {
     }
     if (isFocused) {
       loadPlaces();
-      //setLoadedPlaces(curPlaces => [...curPlaces, route.params.place]);
+      //setLoadedPlaces(curPlaces => [...curPlaces, route.params.place]); //needs to implement the location API in order for it to work
     }
   }, [isFocused]);
 

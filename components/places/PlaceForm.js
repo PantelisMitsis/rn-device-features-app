@@ -7,7 +7,7 @@ import Button from "../UI/Button";
 import { Place } from "../../models/place";
 
 
-function PlaceForm({onCreatePlace}) {
+function PlaceForm({ onCreatePlace }) {
   const [enteredTitle, setEnteredTitle] = useState();
   const [selectedImage, setSelectedImage] = useState();
   const [pickedLocation, setPickedLocation] = useState();
@@ -16,15 +16,15 @@ function PlaceForm({onCreatePlace}) {
     setEnteredTitle(enteredText);
   }
 
-  function takeImageHandler({imageUri}) {
+  function takeImageHandler({ imageUri }) {
     setSelectedImage(imageUri);
   }
 
-  const pickLocationHandler = useCallback(({location}) => {
+  const pickLocationHandler = useCallback(({ location }) => {
     setPickedLocation(location);
   }, []);
 
-  function savePlaceHandler(){
+  function savePlaceHandler() {
     const placeData = new Place(enteredTitle, selectedImage, pickedLocation);
     onCreatePlace(placeData);
   }
@@ -39,12 +39,12 @@ function PlaceForm({onCreatePlace}) {
       {/* <LocationPicker onPickLocation={pickLocationHandler} /> */}
       <Button onPress={savePlaceHandler}></Button>
     </ScrollView>
-    
+
   );
 }
 
 
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
   form: {
     flex: 1,
     padding: 24
